@@ -1,3 +1,4 @@
+//falta implementar a função de atualizar cadastro e excluir pet 
 #include <stdio.h>
 #include <string.h>
 
@@ -16,6 +17,14 @@ void cadastrarPet(void);
 void listarPets(void); 
 void atualizarcadastro(void);
 void excluir(void);
+
+void atualizarcadastro(void){
+    printf("\n=== ATUALIZAR CADASTRO ===\n");
+}
+
+void excluir(void){
+    printf("\n=== EXCLUIR PET ===\n");
+}
 
 void limparBuffer(void) {
     
@@ -40,7 +49,7 @@ void listarPets(void) {
     while (fscanf(arquivo, "%d %49s %d", &pet.id, pet.nomepet, &pet.idadepet) == 3) {
         printf("ID: %d | Nome: %s | Idade: %d\n", pet.id, pet.nomepet, pet.idadepet);
     }
-
+    
     fclose(arquivo);
 }
 
@@ -123,7 +132,7 @@ int main(void) {
             case 2: listarPets();        break;
             case 3: atualizarcadastro(); break;
             case 4: excluir();           break;
-            case 5: limpar(); printf("Saindo do programa...\n"); break;
+            case 5: printf("Saindo do programa...\n"); break;
             default: printf("Opcao invalida\n"); break;
         }
     } while (opcao != 5);
