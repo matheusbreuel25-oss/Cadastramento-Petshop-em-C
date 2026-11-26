@@ -19,6 +19,34 @@ void atualizarcadastro(void);
 void excluir(void);
 void mediaIdades(void);
 
+void mediaIdades(void) {
+    Pet pet;
+    FILE *arquivo;
+    int somaIdades = 0;
+    int contador = 0;
+
+    arquivo = fopen(ARQUIVO, "r");
+    if (arquivo == NULL) {
+        printf("Nenhum pet cadastrado.\n");
+        return;
+    }
+
+    while (fscanf(arquivo, "%d %49s %d %49s",
+                  &pet.id, pet.nomepet, &pet.idadepet, pet.raca) == 4) {
+        somaIdades += pet.idadepet;
+        contador++;
+    }
+
+    fclose(arquivo);
+
+    if (contador > 0) {
+        double media = (double)somaIdades / contador;
+        printf("Media das idades dos pets: %.2f\n", media);
+    } else {
+        printf("Nenhum pet cadastrado para calcular a media.\n");
+    }
+}
+
 
 void atualizarcadastro(void) {
     Pet pet;
