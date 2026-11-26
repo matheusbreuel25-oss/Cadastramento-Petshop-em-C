@@ -224,6 +224,7 @@ void mostrarmenu(void) { //amostragem do menu de cadastro de pets
     printf("3 - Atualizar cadastro\n");
     printf("4 - Excluir\n");
     printf("5 - Sair\n");
+    printf("6 - Media das idades dos pets\n");
 }
 
 void cadastrarPet(void) {
@@ -305,6 +306,7 @@ int main(void) {
             case 3: atualizarcadastro(); break;
             case 4: excluir();           break;
             case 5: printf("Saindo do programa...\n"); break;
+            case 6: mediaIdades();       break;
             default: printf("Opcao invalida\n"); break;
         }
     } while (opcao != 5);
