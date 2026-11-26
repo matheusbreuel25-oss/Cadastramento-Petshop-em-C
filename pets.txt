@@ -1,4 +1,2 @@
-1 rian 
- 12
-2 lincon 
- 2
+1 a 2 <
+2 deyvson  25 bulldog
